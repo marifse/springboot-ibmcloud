@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "ibm" {
-  ibmcloud_api_key = "otP2xoC9STgnVERCk_ioyNdn2WyrS8EUYVeRjGuqI4tw"
+  ibmcloud_api_key = ""
 }
 
 provider "docker" {
