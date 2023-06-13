@@ -30,7 +30,7 @@ resource "ibm_code_engine_app" "code_engine_app_instance" {
   project_id      = ibm_code_engine_project.code_engine_project_instance.project_id
   name            = var.application_name
   image_reference = "${var.imageURLRegistry}/${var.namespace_name}/${var.application_name}"
-  image_secret    = var.code_engine_build_output_secret
+  #image_secret    = var.code_engine_build_output_secret
   
   image_port =  "8080"
 

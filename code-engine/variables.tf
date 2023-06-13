@@ -32,5 +32,5 @@ variable "authRegitry" {
 
 variable "projectName" {
   type = string
-  default = "Springboot-CE"
+  default = "Springboot-CE17"
 }
