@@ -46,7 +46,7 @@ resource "ibm_code_engine_secret" "code_engine_registry_access_secret" {
   data       = {
     "username" = "iamapikey"
     "password" = var.ibmcloud_api_key
-    "server"   = var.registry_server
+    "server"   = var.imageURLRegistry
     "email"    = var.email
   }
 }

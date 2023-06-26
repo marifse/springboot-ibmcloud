@@ -8,12 +8,6 @@ variable "email" {
   default = "gttservices1@gmail.com"
 }
 
-variable "code_engine_build_output_secret" {
-  description = "The secret that is required to access the image registry. Make sure that the secret is granted with push permissions towards the specified container registry namespace."
-  type        = string
-  default     = "ce-auto-icr-private-us-south"
-}
-
 variable "namespace_name" {
   type = string
   default = "my_springboot_namespace_1"
@@ -37,8 +31,4 @@ variable "authRegitry" {
 variable "projectName" {
   type = string
   default = "Springboot-CE22"
-}
-variable "registry_server" {
-  type = string
-  default = "private.us.icr.io"
 }
