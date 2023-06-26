@@ -30,12 +30,23 @@ resource "ibm_code_engine_app" "code_engine_app_instance" {
   project_id      = ibm_code_engine_project.code_engine_project_instance.project_id
   name            = var.application_name
   image_reference = "${var.imageURLRegistry}/${var.namespace_name}/${var.application_name}"
-  #image_secret    = var.code_engine_build_output_secret
-  
+  image_secret = ibm_code_engine_secret.code_engine_registry_access_secret.name
   image_port =  "8080"
 
   depends_on = [
+    ibm_code_engine_secret.code_engine_registry_access_secret,
     docker_image.image,
     docker_registry_image.image-registry
   ]
+}
+resource "ibm_code_engine_secret" "code_engine_registry_access_secret" {
+  project_id = ibm_code_engine_project.code_engine_project_instance.project_id
+  name       = "my-registry-secret-arif"
+  format     = "registry"
+  data       = {
+    "username" = "iamapikey"
+    "password" = var.ibmcloud_api_key
+    "server"   = var.registry_server
+    "email"    = var.email
+  }
 }

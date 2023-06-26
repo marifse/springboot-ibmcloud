@@ -3,6 +3,10 @@ variable "ibmcloud_api_key" {
   type        = string
   default = ""
 }
+variable "email" {
+  type    = string
+  default = "gttservices1@gmail.com"
+}
 
 variable "code_engine_build_output_secret" {
   description = "The secret that is required to access the image registry. Make sure that the secret is granted with push permissions towards the specified container registry namespace."
@@ -32,5 +36,9 @@ variable "authRegitry" {
 
 variable "projectName" {
   type = string
-  default = "Springboot-CE17"
+  default = "Springboot-CE22"
+}
+variable "registry_server" {
+  type = string
+  default = "private.us.icr.io"
 }
